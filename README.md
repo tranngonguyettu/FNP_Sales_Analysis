@@ -111,7 +111,7 @@ ORDER BY revenue_pct DESC;
 | Medium Value | 1151002 | 32.69 |
 | Low Value | 755786 | 21.47 |
 
-3. RFM Analysis
+3. RFM Analysis - Percent of customer who hasn't shopped more than 50 days
 ```sql
 WITH max_order_date AS (
 	SELECT MAX(order_date) as global_last_date FROM orders
@@ -123,17 +123,18 @@ customer_metrics AS (
 	FROM orders AS o
     JOIN products AS p ON o.product_id = p.product_id
     GROUP BY o.customer_id
+),
+rfm AS (
+	SELECT c.customer_id, c.frequency, c.monetary, DATEDIFF(m.global_last_date, c.last_order_date) AS recency
+	FROM customer_metrics AS c
+	CROSS JOIN max_order_date AS m
 )
-SELECT c.customer_id, c.frequency, c.monetary, DATEDIFF(m.global_last_date, c.last_order_date) AS recency
-FROM customer_metrics AS c
-CROSS JOIN max_order_date AS m
-LIMIT 3;
+SELECT ROUND(SUM(CASE WHEN recency>50 THEN 1 ELSE 0 END)/COUNT(*)*100,2) AS long_time_customer_pct
+FROM rfm;
 ```
-| customer_id | frequency | monetary | recency |
-|------------|-----------|-----------|----------|
-|C001|	5|	9095|	124|
-|C002|	8|	23860|	53|
-|C003|	10|	34871|	51|
+| customer_id |
+|------------|
+|38.00|
 
 4. Product classification by their performance
 ```sql
@@ -188,8 +189,9 @@ FROM order_metrics;
 |493|	1000|	49.3|	
 # Insights
 ## Products
-The revenue of FNP relies on 3 main categories, including Sweets, Colors and Soft Toys across different occasions. Based on the top 5 products chart and product classification query, they are classified as 'hero product' or 'profit generator', indicating that these products are popular with greater revenue contributions and higher counts of orders. However, some 'underperforming' products may cause the imbalance revenue among categories, thereby reducing sales efficiency. Further analysis on customer preferences and product features is necessary to maintain the sustainable sales performance and meet the customers' demands.
+Three categories, including Sweets, Colors, and Soft Toys, drive the majority of FNP’s revenue across occasions.. Based on product performance classification, most top-selling products are classified as 'hero product' or 'profit generator'. These products represent the core revenue drivers of the business. However, 'underperforming' products contribute little revenue and may decline category performance. This suggests an opportunity to optimize the product mix through promotion, cross-selling, or product reduction rather than expanding the assortment.
 
 ## Customer behaviours
-In the dashboard using gender filter, we can see the clear difference between male and female on their daily purchase and top 5 products. While steady and increasing purchases in weekends is observed in female customers, men shopping habits fluctuates more and decreases over time.
+Customer metrics indicates strong retention: over 64% of customers place more than 10 orders, and 45.85% of total revenue comes from high-value customers. This shows the business relies significantly on repeat purchasing. Although customer engagement is strong, 38% of customers have not purchased in over 50 days, suggesting potential churn despite overall loyalty.
 
+Dashboard filtering reveals distinct purchasing behaviors by gender. While consistent and increasing weekend purchasing is observed in female customers, male shopping activity fluctuate and gradually decrease over time. Additionally, revenue distribution across cities also varies by gender, suggesting demographic-driven demand differences rather than uniform purchasing behavior across regions.

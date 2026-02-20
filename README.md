@@ -1,3 +1,4 @@
+# FNP SALES ANALYSIS
 <img width="305" height="165" alt="Image" src="https://github.com/user-attachments/assets/d09981ad-6ddb-4525-9644-54cb9d3813e1" />
 
 # Project overview
@@ -63,7 +64,8 @@ FROM orders AS o
 LEFT JOIN products AS p ON o.product_id = p.product_id;
 ```
 |avg_order_value|
-|3520.98|
+|------------|
+| 3520.98 | 
 
 2. Repeat purchase rate - customer purchasing more than or equal 10 times
 ```sql
@@ -84,8 +86,8 @@ FROM customer_orders AS co
 JOIN customer_revenue AS cr ON co.customer_id = cr.customer_id;
 ```
 |repeat_customer_revenue_pct|
-|64.77|
+|------------|
+| 64.77 | 
 
-3.
 # Insights
 The revenue of FNP relies on most of 3 main categories, including Sweets, Colors and Soft Toys.

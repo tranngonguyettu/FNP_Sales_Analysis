@@ -3,7 +3,7 @@
 
 # Project overview
 This project analyses transactional retail datasets from FNP (Ferns and Petals) - an online platform specialising in gifts shipping with a variety of products - to understand customer purchasing behaviour, their preferences, product performance, revenue trends and shipping efficiency.
-The project aims to perform end-to-end Excel dashboard projects and simulate practical business workflow: from transforming data, performing aggregration by SQL, delivering calculation and trend patterns in Excel and presenting a business performance via an interaction dashboard.
+The project aims to perform an end-to-end analysis process and simulate practical business workflow: from transforming data, performing aggregration by SQL, delivering calculation and trend patterns in Excel and presenting a business performance via an interaction dashboard.
 
 # Dataset description
 Data source: https://github.com/Ayushi0214/FNP---Excel-Project/tree/main

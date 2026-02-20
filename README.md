@@ -55,18 +55,8 @@ Excel was used for exploratory analysis and pivot-based validation.
 # Dashboard
 <img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" /># FNP Sales Analysis
 
-# SQL Aggregration
-1. Average order value
-```sql
-SELECT ROUND(SUM(o.quantity*p.price)/COUNT(DISTINCT o.order_id),2) AS avg_order_value
-FROM orders AS o
-LEFT JOIN products AS p ON o.product_id = p.product_id;
-```
-|avg_order_value|
-|------------|
-| 3520.98 | 
-
-2. Repeat purchase rate - customer purchasing more than or equal 10 times
+# SQL key metrics
+1. Repeat purchase rate - customer purchasing more than or equal 10 times
 ```sql
 WITH customer_orders AS (
 	SELECT c.customer_id, COUNT(DISTINCT o.order_id) AS order_count
@@ -88,7 +78,7 @@ JOIN customer_revenue AS cr ON co.customer_id = cr.customer_id;
 |------------|
 | 64.77 | 
 
-3. Customer segmentation and percentage of revenue for each segment
+2. Customer segmentation and percentage of revenue for each segment
 ```sql
 WITH customer_revenue AS (
 	SELECT o.customer_id, SUM(o.quantity*p.price) AS revenue
@@ -121,7 +111,7 @@ ORDER BY revenue_pct DESC;
 | Medium Value | 1151002 | 32.69 |
 | Low Value | 755786 | 21.47 |
 
-4. RFM Analysis
+3. RFM Analysis
 ```sql
 WITH max_order_date AS (
 	SELECT MAX(order_date) as global_last_date FROM orders
@@ -145,6 +135,56 @@ LIMIT 3;
 |C002|	8|	23860|	53|
 |C003|	10|	34871|	51|
 
+4. Product classification by their performance
+```sql
+WITH product_performance AS (
+	SELECT p.product_id, p.product_name, COUNT(o.order_id) AS order_count, SUM(o.quantity*p.price) AS revenue
+    FROM orders AS o
+    JOIN products AS p ON o.product_id = p.product_id
+    GROUP BY p.product_id, p.product_name
+    ORDER BY p.product_id 
+),
+avg_values AS (
+	SELECT AVG(order_count) AS avg_order, AVG(revenue) AS avg_revenue
+    FROM product_performance
+)
+SELECT pp.product_id, pp.product_name, order_count, revenue,
+	CASE WHEN order_count >= avg_order AND revenue >= avg_revenue THEN "Hero product"
+		 WHEN order_count >= avg_order AND revenue < avg_revenue THEN "Traffic driver"
+         WHEN order_count < avg_order AND revenue >= avg_revenue THEN "Profit genarator"
+         ELSE "Underperforming"
+         END AS product_type
+FROM product_performance AS pp
+CROSS JOIN avg_values;
+```
+| product_id | product_name | order_count | product_type |
+|------------|-----------|-----------|----------|
+|1|	Magnam Set|	19|	121905|	Hero product|
+|2|	Voluptas Box|	7|	9261|	Underperforming|
+|3|	Eius Gift|	17|	85904|	Hero product|
 
+5. Percent of late orders compared to total orders
+```sql
+WITH delivery_stats AS (
+	SELECT o.order_id, DATEDIFF(o.delivery_date, o.order_date) AS delivery_time
+    FROM orders AS o
+    WHERE o.delivery_date IS NOT NULL
+),
+avg_delivery AS (
+	SELECT AVG(DATEDIFF(delivery_date, order_date)) AS avg_delivery_days
+    FROM orders AS o
+),
+order_metrics AS (
+	SELECT COUNT(*) AS order_total, 
+            SUM(CASE WHEN ds.delivery_time > ad.avg_delivery_days THEN 1 ELSE 0 END) AS late_orders
+	FROM delivery_stats AS ds 
+    CROSS JOIN avg_delivery AS ad
+)
+SELECT late_orders, order_total, ROUND(late_orders/order_total*100,2) AS late_order_pct
+FROM order_metrics;
+```
+| late_orders | order_total | late_order_pct | 
+|------------|-----------|-----------|
+|493|	1000|	49.3|	
 # Insights
 The revenue of FNP relies on most of 3 main categories, including Sweets, Colors and Soft Toys.

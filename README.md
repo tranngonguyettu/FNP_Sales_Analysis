@@ -1,11 +1,11 @@
-# FNP SALES ANALYSIS
+# FNP SALES ANALYSIS 
 <img width="305" height="165" alt="Image" src="https://github.com/user-attachments/assets/d09981ad-6ddb-4525-9644-54cb9d3813e1" />
 
-# Project overview
+# 📌 Project overview
 This project analyses transactional retail datasets from FNP (Ferns and Petals) - an online platform specialising in gifts shipping with a variety of products - to understand customer purchasing behaviour, their preferences, product performance, revenue trends and shipping efficiency.
 The project aims to perform an end-to-end analysis process and simulate practical business workflow: from transforming data, performing aggregration by SQL, delivering calculation and trend patterns in Excel and presenting a business performance via an interactive dashboard.
 
-# Dataset description
+# 🔢 Dataset description
 Data source: https://github.com/Ayushi0214/FNP---Excel-Project/tree/main
 
 The dataset includes details about customers, products, orders
@@ -16,7 +16,7 @@ The dataset includes details about customers, products, orders
 | products | product catalog with pricing | 
 | customers | customers information | 
 
-# Business questions
+# 🏢 Business questions
 ## Sales trends
 - When do customers shop the most? (by months, quarter, days)
 - How does sales fluctuates over the months in 2023?
@@ -52,10 +52,10 @@ Excel was used for exploratory analysis and pivot-based validation.
 | Excel (Power Query, Power Pivot, Pivot Table)| clean and transform data by Power Query, manage relationships between tables with Power Pivot, sales calculation by Pivot table, build dashboard | 
 | SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification,...) | 
 
-# Dashboard
+# 📊 Dashboard
 <img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" />
 
-# SQL key metrics
+# 📚 SQL key metrics
 1. Repeat purchase rate - customer purchasing more than or equal 10 times
 ```sql
 WITH customer_orders AS (
@@ -187,16 +187,16 @@ FROM order_metrics;
 | late_orders | order_total | late_order_pct | 
 |------------|-----------|-----------|
 |493|	1000|	49.3|	
-# Insights
-## Products
+# 💌 Insights
+## Products 📦
 Three categories, including Sweets, Colors, and Soft Toys, drive the majority of FNP’s revenue across occasions.. Based on product performance classification, most top-selling products are classified as 'hero product' or 'profit generator'. These products represent the core revenue drivers of the business. In contrast, 'underperforming' products contribute little revenue and may decline category performance. This suggests an opportunity to optimize the product mix through promotion, cross-selling, or product reduction rather than expanding the assortment.
 
-## Customer behaviours
+## Customer behaviours 🛍️
 Customer metrics indicates strong retention: over 64% of customers place more than 10 orders, and 45.85% of total revenue comes from high-value customers. This shows the business relies significantly on repeat purchasing. Although customer engagement is strong, 38% of customers have not purchased in over 50 days, suggesting potential churn despite overall frequency. Retention strategies (reminder, personalised offers) should target inactive customers to improve their retention and sales stability
 
 Dashboard filtering reveals distinct purchasing behaviors by gender. While consistent and increasing weekend purchasing is observed in female customers, male shopping activity fluctuate and gradually decrease over time. Additionally, revenue distribution across cities also varies by gender, suggesting demographic-driven demand differences rather than uniform purchasing behavior across regions. For example, marketing campaigns targetting for both genders could improve the sales performance and customer demands across locations.
 
-## Sales patterns
+## Sales patterns 📈
 Overall, the monthly sales trend shows noticeable fluctuations rather than steady growth, with clear peaks in March and August followed by sharp declines. This trend suggests revenue is strongly depedent on short-term seasonal occasions or promotional events rather than consistent purchasing behaviour. Especially, sales remain relatively low from April to July, indicating weak mid-year shopping demands and reliance on specific high-performing months to sustain annual revenue.
 
 From daily chart, while both revenue and order volumne increase during weekends, a peak sales appear on Tuesday. The small difference between total sales and total orders presents revenue is mainly volume-driven with the average order value of $3520.98. These features imply that revenue performance is influenced by customer shopping seasons than spending frequencies. Therefore, strategies, such as engagement promotion and marketing campaigns during seasonal periods would be more effective than price-focused approaches.

@@ -10,8 +10,8 @@ Data source: https://github.com/Ayushi0214/FNP---Excel-Project/tree/main
 
 The dataset includes details about customers, products, orders
 
-| Table |           Description                   |
-|------------|-----------:|
+| Table |Description |
+|------------|-----------|
 | orders | transactional purchase records | 
 | products | product catalog with pricing | 
 | customers | customers information | 
@@ -48,7 +48,7 @@ The dataset includes details about customers, products, orders
 SQL was used to clean and transform raw transactional data into analytical metrics.
 Excel was used for exploratory analysis and pivot-based validation.
 
-| Tool |                   Purpose                   |
-|------------|----------------------------------------:|
+| Tool |Purpose|
+|------------|-------------------|
 | Excel (Power Query, Power Pivot, Pivot Table)| clean and transform data, manage relationships between tables, sales calculation by Pivot table, build dashboard | 
 | SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification) | 

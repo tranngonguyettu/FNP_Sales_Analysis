@@ -53,7 +53,7 @@ Excel was used for exploratory analysis and pivot-based validation.
 | SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification,...) | 
 
 # Dashboard
-<img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" /># FNP Sales Analysis
+<img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" />
 
 # SQL key metrics
 1. Repeat purchase rate - customer purchasing more than or equal 10 times

@@ -50,5 +50,7 @@ Excel was used for exploratory analysis and pivot-based validation.
 
 | Tool |Purpose|
 |------------|-------------------|
-| Excel (Power Query, Power Pivot, Pivot Table)| clean and transform data, manage relationships between tables, sales calculation by Pivot table, build dashboard | 
-| SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification) | 
+| Excel (Power Query, Power Pivot, Pivot Table)| clean and transform data by Power Query, manage relationships between tables with Power Pivot, sales calculation by Pivot table, build dashboard | 
+| SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification,...) | 
+
+# Dashboard

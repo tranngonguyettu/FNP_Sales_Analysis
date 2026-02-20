@@ -7,6 +7,7 @@ The project aims to perform end-to-end Excel dashboard projects and simulate pra
 
 # Dataset description
 Data source: https://github.com/Ayushi0214/FNP---Excel-Project/tree/main
+
 The dataset includes details about customers, products, orders
 
 | Table | Description |

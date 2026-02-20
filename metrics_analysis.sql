@@ -38,12 +38,6 @@ FROM customer_orders AS co
 JOIN customer_revenue AS cr ON co.customer_id = cr.customer_id;
 
 -- CUSTOMER BEHAVIOUR
--- Percent of revenue that repeat customer contributes
-SELECT o.customer_id, SUM(o.quantity*p.price) AS revenue
-    FROM orders AS o 
-    JOIN products AS p ON o.product_id = p.product_id
-    GROUP BY o.customer_id;
-    
 -- Customer segmentation and revenue for each segment
 WITH customer_revenue AS (
 	SELECT o.customer_id, SUM(o.quantity*p.price) AS revenue
@@ -86,8 +80,28 @@ SELECT c.customer_id, c.frequency, c.monetary, DATEDIFF(m.global_last_date, c.la
 FROM customer_metrics AS c
 CROSS JOIN max_order_date AS m;
 
+-- Percent of customer who hasn't shopped more than 50 days
+WITH max_order_date AS (
+	SELECT MAX(order_date) as global_last_date FROM orders
+),
+customer_metrics AS (
+	SELECT o.customer_id, COUNT(DISTINCT o.order_id) AS frequency,
+			SUM(o.quantity*p.price) AS monetary,
+            MAX(o.order_date) AS last_order_date
+	FROM orders AS o
+    JOIN products AS p ON o.product_id = p.product_id
+    GROUP BY o.customer_id
+),
+rfm AS (
+	SELECT c.customer_id, c.frequency, c.monetary, DATEDIFF(m.global_last_date, c.last_order_date) AS recency
+	FROM customer_metrics AS c
+	CROSS JOIN max_order_date AS m
+)
+SELECT ROUND(SUM(CASE WHEN recency>50 THEN 1 ELSE 0 END)/COUNT(*)*100,2) AS risk_churn
+FROM rfm;
+
 -- PRODUCT PERFORMANCE
--- Sales and percent of revenue by cateogory
+-- Sales and percent of revenue by category
 WITH category_revenue AS (
 	SELECT p.category , SUM(o.quantity*p.price) AS total_sales
 	FROM orders AS o
@@ -104,7 +118,7 @@ WITH product_performance AS (
     FROM orders AS o
     JOIN products AS p ON o.product_id = p.product_id
     GROUP BY p.product_id, p.product_name
-    ORDER BY p.product_id ASC
+    ORDER BY p.product_id 
 ),
 avg_values AS (
 	SELECT AVG(order_count) AS avg_order, AVG(revenue) AS avg_revenue
@@ -120,7 +134,7 @@ FROM product_performance AS pp
 CROSS JOIN avg_values;
 
 -- Regional performance
--- Cateogory spending by region
+-- Cateogory spending by cities
 WITH region_revenue AS (
 	SELECT c.city, p.category, SUM(o.quantity*p.price) AS revenue
 	FROM orders AS o
@@ -154,6 +168,7 @@ region_late_delivery AS (
 SELECT ROUND(SUM(CASE WHEN late_delivery_rate > 50 THEN 1 ELSE 0 END)/COUNT(*)*100,2) AS city_delivery_rate_pct
 FROM region_late_delivery;
 
+-- Percent of late orders compared to total orders
 WITH delivery_stats AS (
 	SELECT o.order_id, DATEDIFF(o.delivery_date, o.order_date) AS delivery_time
     FROM orders AS o
@@ -169,5 +184,5 @@ order_metrics AS (
 	FROM delivery_stats AS ds 
     CROSS JOIN avg_delivery AS ad
 )
-SELECT late_orders, order_total, ROUND(late_orders/order_total*100,2) AS late_order_pct
+SELECT late_orders, order_total, ROUND(late_orders/order_total*100,2) AS late_order_rate
 FROM order_metrics;

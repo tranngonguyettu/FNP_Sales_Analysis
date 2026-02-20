@@ -190,5 +190,6 @@ FROM order_metrics;
 ## Products
 The revenue of FNP relies on 3 main categories, including Sweets, Colors and Soft Toys across different occasions. Based on the top 5 products chart and product classification query, they are classified as 'hero product' or 'profit generator', indicating that these products are popular with greater revenue contributions and higher counts of orders. However, some 'underperforming' products may cause the imbalance revenue among categories, thereby reducing sales efficiency. Further analysis on customer preferences and product features is necessary to maintain the sustainable sales performance and meet the customers' demands.
 
-## 
+## Customer behaviours
+In the dashboard using gender filter, we can see the clear difference between male and female on their daily purchase and top 5 products. While steady and increasing purchases in weekends is observed in female customers, men shopping habits fluctuates more and decreases over time.
 

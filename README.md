@@ -129,10 +129,10 @@ rfm AS (
 	FROM customer_metrics AS c
 	CROSS JOIN max_order_date AS m
 )
-SELECT ROUND(SUM(CASE WHEN recency>50 THEN 1 ELSE 0 END)/COUNT(*)*100,2) AS long_time_customer_pct
+SELECT ROUND(SUM(CASE WHEN recency>50 THEN 1 ELSE 0 END)/COUNT(*)*100,2) AS risk_churn
 FROM rfm;
 ```
-| customer_id |
+|risk_churn|
 |------------|
 |38.00|
 

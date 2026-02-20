@@ -44,3 +44,11 @@ The dataset includes details about customers, products, orders
 - Evaluate repeat purchase rate
 - RFM Analysis
 - Percent of late orders compared to total orders
+# Tools and process
+SQL was used to clean and transform raw transactional data into analytical metrics.
+Excel was used for exploratory analysis and pivot-based validation.
+
+| Tool | Purpose |
+|------------|-----------:|
+| Excel (Power Query, Power Pivot, Pivot Table)| clean and transform data, manage relationships between tables, sales calculation by Pivot table, build dashboard | 
+| SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification) | 

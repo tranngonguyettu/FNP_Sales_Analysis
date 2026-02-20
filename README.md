@@ -1,4 +1,3 @@
-<img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" /># FNP Sales Analysis
 <img width="305" height="165" alt="Image" src="https://github.com/user-attachments/assets/d09981ad-6ddb-4525-9644-54cb9d3813e1" />
 
 # Project overview
@@ -54,7 +53,7 @@ Excel was used for exploratory analysis and pivot-based validation.
 | SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification,...) | 
 
 # Dashboard
-<img width="1680" height="706" alt="Image" src="https://github.com/user-attachments/assets/bc2f6929-2c45-45d4-b774-290acc108498" />
+<img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" /># FNP Sales Analysis
 
 # SQL Aggregration
 1. Average order value

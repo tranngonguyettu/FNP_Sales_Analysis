@@ -17,33 +17,33 @@ The dataset includes details about customers, products, orders
 | customers | customers information | 
 
 # 🏢 Business questions
-## Sales trends
+## Sales trends 📈
 - When do customers shop the most? (by months, quarter, days)
 - How does sales fluctuates over the months in 2023?
 - Evaluate revenue contribution of different occasions
 - Present the number of orders and sales throughout weekdays 
-## Products
+## Products 📦
 - Identify top 5 products by revenue
 - What products are most popular across different occasions?
 - Which product category contributes most of the revenue?
 - Sales and percent of revenue by category
 - Identify product classification by their performance
-## Customers
+## Customers 🛒
 - Analyse customer behaviour based on genders
 - How much do customers spend on average?
 - Perform customer segmentation and revenue for each segment
-## Region
+## Region 🗺️
 - Identify top 10 cities contributing the highest revenue
 - Category spending by cities
 - Delivery time rate by cities
-## Operations
+## Operations 🧩
 - Calculate average order-delivery time
 - Identify total revenue of the company
 - How many orders in total?
 - Evaluate repeat purchase rate
 - RFM Analysis
 - Percent of late orders compared to total orders
-# Tools and process
+# 🛠️ Tools and process
 SQL was used to clean and transform raw transactional data into analytical metrics.
 Excel was used for exploratory analysis and pivot-based validation.
 

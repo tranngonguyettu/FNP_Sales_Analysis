@@ -31,7 +31,6 @@ The dataset includes details about customers, products, orders
 ## Customers
 - Analyse customer behaviour based on genders
 - How much do customers spend on average?
-- Percentage of revenue that repeat customer contributes
 - Perform customer segmentation and revenue for each segment
 ## Region
 - Identify top 10 cities contributing the highest revenue
@@ -88,6 +87,64 @@ JOIN customer_revenue AS cr ON co.customer_id = cr.customer_id;
 |repeat_customer_revenue_pct|
 |------------|
 | 64.77 | 
+
+3. Customer segmentation and percentage of revenue for each segment
+```sql
+WITH customer_revenue AS (
+	SELECT o.customer_id, SUM(o.quantity*p.price) AS revenue
+    FROM orders AS o 
+    JOIN products AS p ON o.product_id = p.product_id
+    GROUP BY o.customer_id
+),
+classified AS (
+	SELECT *, NTILE(3) OVER (ORDER BY revenue DESC) AS tile
+	FROM customer_revenue
+),
+segment_revenue AS (
+	SELECT customer_id, revenue, CASE 
+		WHEN tile = 1 THEN "High value"
+        WHEN tile = 2 THEN "Medium value"
+        ELSE "Low value" 
+        END AS segment
+	FROM classified
+	GROUP BY customer_id
+)
+SELECT
+    segment, SUM(revenue) AS revenue, ROUND(SUM(revenue)/ SUM(SUM(revenue)) OVER() * 100, 2) AS revenue_pct
+FROM segment_revenue
+GROUP BY segment
+ORDER BY revenue_pct DESC;
+```
+| segment | revenue | revenue_pct |
+|------------|-----------|-----------|
+| High Value | 1614196 | 45.85 |
+| Medium Value | 1151002 | 32.69 |
+| Low Value | 755786 | 21.47 |
+
+4. RFM Analysis
+```sql
+WITH max_order_date AS (
+	SELECT MAX(order_date) as global_last_date FROM orders
+),
+customer_metrics AS (
+	SELECT o.customer_id, COUNT(DISTINCT o.order_id) AS frequency,
+			SUM(o.quantity*p.price) AS monetary,
+            MAX(o.order_date) AS last_order_date
+	FROM orders AS o
+    JOIN products AS p ON o.product_id = p.product_id
+    GROUP BY o.customer_id
+)
+SELECT c.customer_id, c.frequency, c.monetary, DATEDIFF(m.global_last_date, c.last_order_date) AS recency
+FROM customer_metrics AS c
+CROSS JOIN max_order_date AS m
+LIMIT 3;
+```
+| customer_id | frequency | monetary | recency |
+|------------|-----------|-----------|----------|
+|C001|	5|	9095|	124|
+|C002|	8|	23860|	53|
+|C003|	10|	34871|	51|
+
 
 # Insights
 The revenue of FNP relies on most of 3 main categories, including Sweets, Colors and Soft Toys.

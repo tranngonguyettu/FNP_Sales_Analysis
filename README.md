@@ -198,4 +198,5 @@ Dashboard filtering reveals distinct purchasing behaviors by gender. While consi
 
 ## Sales patterns
 Overall, the monthly sales trend shows noticeable fluctuations rather than steady growth, with clear peaks in March and August followed by sharp declines. This trend suggests revenue is strongly depedent on short-term seasonal occasions or promotional events rather than consistent purchasing behaviour. Especially, sales remain relatively low from April to July, indicating weak mid-year shopping demands and reliance on specific high-performing months to sustain annual revenue.
+
 From daily chart, while both revenue and order volumne increase during weekends, a peak sales appear on Tuesday. The small difference between total sales and total orders presents revenue is mainly volume-driven with the average order value of $3520.98. These features imply that revenue performance is influenced by customer shopping seasons than spending frequencies. Therefore, strategies, such as engagement promotion and marketing campaigns during seasonal periods would be more effective than price-focused approaches.

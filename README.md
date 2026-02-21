@@ -47,10 +47,10 @@ The dataset includes details about customers, products, orders
 SQL was used to clean and transform raw transactional data into analytical metrics.
 Excel was used for exploratory analysis and pivot-based validation.
 
-| Tool |Purpose|
+| Tool |Process|
 |------------|-------------------|
 | Excel (Power Query, Power Pivot, Pivot Table)| clean and transform data by Power Query, manage relationships between tables with Power Pivot, sales calculation by Pivot table, build dashboard | 
-| SQL (SELECT, JOIN, AGGREGRATION, CTE) | calculate key business metrics (RFM, Customer Segment, Product Classification,...) | 
+| SQL (SELECT, JOIN, AGGREGRATION, CTE) | import data using Table Data Import Wizard and then alter datatype and column names, calculate key business metrics (RFM, Customer Segment, Product Classification,...) | 
 
 # 📊 Dashboard
 <img width="1680" height="706" alt="dashboard" src="https://github.com/user-attachments/assets/5f65009d-6489-4685-8283-216c443d0798" />

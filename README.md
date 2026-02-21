@@ -186,7 +186,7 @@ FROM order_metrics;
 ## Products 📦
 <img width="797" height="438" alt="Image" src="https://github.com/user-attachments/assets/44404bda-77c0-41f9-89cb-98ca5e15299a" />
 
-<img width="799" height="434" alt="Image" src="https://github.com/user-attachments/assets/03bf579c-f482-47cf-9fa9-c7b30492bd44" />
+<img width="696" height="367" alt="Image" src="https://github.com/user-attachments/assets/9cf89692-2043-48a8-91cb-3fd4f4c527b1" />
 
 Three categories, including Sweets, Colors, and Soft Toys, drive the majority of FNP’s revenue across occasions.. Based on product performance classification, most top-selling products are classified as 'hero product' or 'profit generator'. These products represent the core revenue drivers of the business. In contrast, 'underperforming' products contribute little revenue and may decline category performance. This suggests an opportunity to optimize the product mix through promotion, cross-selling, or product reduction rather than expanding the assortment.
 

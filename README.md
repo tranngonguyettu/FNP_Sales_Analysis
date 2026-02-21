@@ -38,8 +38,6 @@ The dataset includes details about customers, products, orders
 - Delivery time rate by cities
 ## Operations 🧩
 - Calculate average order-delivery time
-- Identify total revenue of the company
-- How many orders in total?
 - Evaluate repeat purchase rate
 - RFM Analysis
 - Percent of late orders compared to total orders
@@ -189,6 +187,10 @@ FROM order_metrics;
 |493|	1000|	49.3|	
 # 💌 Insights
 ## Products 📦
+<img width="797" height="438" alt="Image" src="https://github.com/user-attachments/assets/44404bda-77c0-41f9-89cb-98ca5e15299a" />
+
+<img width="799" height="434" alt="Image" src="https://github.com/user-attachments/assets/03bf579c-f482-47cf-9fa9-c7b30492bd44" />
+
 Three categories, including Sweets, Colors, and Soft Toys, drive the majority of FNP’s revenue across occasions.. Based on product performance classification, most top-selling products are classified as 'hero product' or 'profit generator'. These products represent the core revenue drivers of the business. In contrast, 'underperforming' products contribute little revenue and may decline category performance. This suggests an opportunity to optimize the product mix through promotion, cross-selling, or product reduction rather than expanding the assortment.
 
 ## Customer behaviours 🛍️
@@ -196,7 +198,19 @@ Customer metrics indicates strong retention: over 64% of customers place more th
 
 Dashboard filtering reveals distinct purchasing behaviors by gender. While consistent and increasing weekend purchasing is observed in female customers, male shopping activity fluctuate and gradually decrease over time. Additionally, revenue distribution across cities also varies by gender, suggesting demographic-driven demand differences rather than uniform purchasing behavior across regions. For example, marketing campaigns targetting for both genders could improve the sales performance and customer demands across locations.
 
+### Female
+<img width="1433" height="610" alt="Image" src="https://github.com/user-attachments/assets/f134b51a-2d9d-4a64-a7c8-f87b017b8f3c" />
+
+### Male
+<img width="1411" height="600" alt="Image" src="https://github.com/user-attachments/assets/e81ec88b-683d-48d7-b3f5-d54639a37eed" />
+
 ## Sales patterns 📈
+### Monthly
+<img width="803" height="437" alt="Image" src="https://github.com/user-attachments/assets/efa83bbf-4161-4380-b5f7-e592164e9548" />
+
 Overall, the monthly sales trend shows noticeable fluctuations rather than steady growth, with clear peaks in March and August followed by sharp declines. This trend suggests revenue is strongly depedent on short-term seasonal occasions or promotional events rather than consistent purchasing behaviour. Especially, sales remain relatively low from April to July, indicating weak mid-year shopping demands and reliance on specific high-performing months to sustain annual revenue.
+
+### Daily
+<img width="799" height="435" alt="Image" src="https://github.com/user-attachments/assets/466cec33-10aa-4558-b43f-64f80a52b477" />
 
 From daily chart, while both revenue and order volumne increase during weekends, a peak sales appear on Tuesday. The small difference between total sales and total orders presents revenue is mainly volume-driven with the average order value of $3520.98. These features imply that revenue performance is influenced by customer shopping seasons than spending frequencies. Therefore, strategies, such as engagement promotion and marketing campaigns during seasonal periods would be more effective than price-focused approaches.

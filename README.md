@@ -6,8 +6,6 @@ This project analyses transactional retail datasets from FNP (Ferns and Petals) 
 The project aims to perform an end-to-end analysis process and simulate practical business workflow: from transforming data, performing aggregration by SQL, delivering calculation and trend patterns in Excel and presenting a business performance via an interactive dashboard.
 
 # 🔢 Dataset description
-Data source: https://github.com/Ayushi0214/FNP---Excel-Project/tree/main
-
 The dataset includes details about customers, products, orders
 
 | Table |Description |
@@ -24,7 +22,6 @@ The dataset includes details about customers, products, orders
 - Present the number of orders and sales throughout weekdays 
 ## Products 📦
 - Identify top 5 products by revenue
-- What products are most popular across different occasions?
 - Which product category contributes most of the revenue?
 - Sales and percent of revenue by category
 - Identify product classification by their performance

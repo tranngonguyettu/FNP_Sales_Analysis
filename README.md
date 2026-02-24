@@ -197,7 +197,7 @@ FROM order_metrics;
    - over 64% of customers place more than 10 orders
    - 45.85% of total revenue comes from high-value customers.
   This shows the business relies significantly on repeat purchasing.
-- 38% of customers have not purchased in over 50 days, suggesting potential churn despite overall frequency. Retention strategies (reminder, personalised offers) should target inactive customers to improve their retention and sales stability
+- 38% of customers have not purchased in over 50 days, suggesting potential churn despite overall frequency.
 
 - Dashboard filtering reveals distinct purchasing behaviors by gender.
   	- Female: consistent and increasing weekend purchasing
@@ -221,7 +221,7 @@ FROM order_metrics;
 ### Daily
 <img width="799" height="435" alt="Image" src="https://github.com/user-attachments/assets/466cec33-10aa-4558-b43f-64f80a52b477" />
 
-- Both revenue and order volumne increase during weekends with a peak sales on Tuesday.
+- Both revenue and order volume increase during weekends with a peak sales on Tuesday.
 - The small difference between total sales and total orders: revenue is mainly volume-driven with the average order value of $3520.98. 
 - Revenue performance is influenced by customer shopping seasons than spending frequencies. Therefore, strategies, such as engagement promotion and marketing campaigns during seasonal periods would be more effective than price-focused approaches.
 
@@ -229,3 +229,10 @@ FROM order_metrics;
 - Repeat purchase rate is high: 64.77% of customers having 10 or more orders
 - 49.3% of total orders exceeded average order-delivery time (5.53 days) and 8.14% of cities experienced delivery issues, exceeding regional average shipping time
 
+# 🛠️ Recommendations
+1. Stabilise revenue 
+  	- Cross-selling high-performance products with underperforming items to boost the revenue of low-revenue categories
+  	- Specialised marketing campaigns are highly recommended between April and July: shopping reminders, personalised offers, seasonal promotions to increase sales and maintaining customer engagement
+- Further delivery analysis should be performed to improve average order-delivery time:
+	- Local geographical research, such as road infrastructure, traffic situation could help to understand the causes of delivery issues based on different cities
+ 	- Improved delivery solutions: logistics approach, including types of delivery vans, shipping process, should be considered to mitigate late order problems, 

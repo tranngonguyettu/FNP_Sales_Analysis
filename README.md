@@ -229,10 +229,10 @@ FROM order_metrics;
 - Repeat purchase rate is high: 64.77% of customers having 10 or more orders
 - 49.3% of total orders exceeded average order-delivery time (5.53 days) and 8.14% of cities experienced delivery issues, exceeding regional average shipping time
 
-# 🛠️ Recommendations
-1. Stabilise revenue 
-  	- Cross-selling high-performance products with underperforming items to boost the revenue of low-revenue categories
-  	- Specialised marketing campaigns are highly recommended between April and July: shopping reminders, personalised offers, seasonal promotions to increase sales and maintaining customer engagement
-- Further delivery analysis should be performed to improve average order-delivery time:
-	- Local geographical research, such as road infrastructure, traffic situation could help to understand the causes of delivery issues based on different cities
- 	- Improved delivery solutions: logistics approach, including types of delivery vans, shipping process, should be considered to mitigate late order problems, 
+# 📌 Recommendations
+1. Stabilise revenue beyond seasonal peaks: The business should reduce the reliance on high-demand periods by maintaining balanced product performance and enhancing customer retention
+  	- Cross-sell high-performance/profit-generating products with underperforming items to boost the overall revenue and optimise stock inventory
+  	- Launch specialised marketing campaigns during low-revenue months (April-July) through shopping reminders, personalised offers, seasonal promotions
+2. Reduce delays and improve shipping efficiency: Further operational analysis is recommended to optimise average-delivery time
+	- Conduct geographical and traffic-condition analysis across cities to identify structural delivery problems
+ 	- Optimise logistic performance, including delivery routing, vehicle allocation, and shipping processes to minimise late deliveries and improve service reliability

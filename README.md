@@ -155,9 +155,9 @@ CROSS JOIN avg_values;
 ```
 | product_id | product_name | order_count | product_type |
 |------------|-----------|-----------|----------|
-|1|	Magnam Set|	19|	121905|	Hero product|
-|2|	Voluptas Box|	7|	9261|	Underperforming|
-|3|	Eius Gift|	17|	85904|	Hero product|
+|1|	Magnam Set|	19|	Hero product|
+|2|	Voluptas Box|	7|	Underperforming|
+|3|	Eius Gift|	17|	Hero product|
 
 5. Percent of late orders compared to total orders
 ```sql
@@ -188,12 +188,21 @@ FROM order_metrics;
 
 <img width="696" height="367" alt="Image" src="https://github.com/user-attachments/assets/9cf89692-2043-48a8-91cb-3fd4f4c527b1" />
 
-Three categories, including Sweets, Colors, and Soft Toys, drive the majority of FNP’s revenue across occasions.. Based on product performance classification, most top-selling products are classified as 'hero product' or 'profit generator'. These products represent the core revenue drivers of the business. In contrast, 'underperforming' products contribute little revenue and may decline category performance. This suggests an opportunity to optimize the product mix through promotion, cross-selling, or product reduction rather than expanding the assortment.
+ - Sweets, Colors, and Soft Toys, drive the majority of FNP’s revenue across occasions.
+ - Based on product performance classification, most top-selling products are classified as 'hero product' or 'profit generator'. These products represent the core revenue drivers of the business.
+ - 'Underperforming' products contribute little revenue and may decline category performance. This suggests an opportunity to optimize the product mix through promotion, cross-selling, or product reduction rather than expanding the assortment.
 
 ## Customer behaviours 🛍️
-Customer metrics indicates strong retention: over 64% of customers place more than 10 orders, and 45.85% of total revenue comes from high-value customers. This shows the business relies significantly on repeat purchasing. Although customer engagement is strong, 38% of customers have not purchased in over 50 days, suggesting potential churn despite overall frequency. Retention strategies (reminder, personalised offers) should target inactive customers to improve their retention and sales stability
+- Customer metrics indicates strong retention:
+   - over 64% of customers place more than 10 orders
+   - 45.85% of total revenue comes from high-value customers.
+  This shows the business relies significantly on repeat purchasing.
+- 38% of customers have not purchased in over 50 days, suggesting potential churn despite overall frequency. Retention strategies (reminder, personalised offers) should target inactive customers to improve their retention and sales stability
 
-Dashboard filtering reveals distinct purchasing behaviors by gender. While consistent and increasing weekend purchasing is observed in female customers, male shopping activity fluctuate and gradually decrease over time. Additionally, revenue distribution across cities also varies by gender, suggesting demographic-driven demand differences rather than uniform purchasing behavior across regions. For example, marketing campaigns targetting for both genders could improve the sales performance and customer demands across locations.
+- Dashboard filtering reveals distinct purchasing behaviors by gender.
+  	- Female: consistent and increasing weekend purchasing
+  	- Male: their shopping activity fluctuate and gradually decrease over time. 
+- Revenue distribution across cities also varies by gender, suggesting demographic-driven demand differences rather than uniform purchasing behavior across regions. For example, marketing campaigns targetting for both genders could improve the sales performance and customer demands across locations.
 
 ### Female
 <img width="1433" height="610" alt="Image" src="https://github.com/user-attachments/assets/f134b51a-2d9d-4a64-a7c8-f87b017b8f3c" />
@@ -205,9 +214,18 @@ Dashboard filtering reveals distinct purchasing behaviors by gender. While consi
 ### Monthly
 <img width="803" height="437" alt="Image" src="https://github.com/user-attachments/assets/efa83bbf-4161-4380-b5f7-e592164e9548" />
 
-Overall, the monthly sales trend shows noticeable fluctuations rather than steady growth, with clear peaks in March and August followed by sharp declines. This trend suggests revenue is strongly depedent on short-term seasonal occasions or promotional events rather than consistent purchasing behaviour. Especially, sales remain relatively low from April to July, indicating weak mid-year shopping demands and reliance on specific high-performing months to sustain annual revenue.
+- The noticeable fluctuations with clear peaks in March and August followed by sharp declines in monthly sales: reaching at 376.87% and 267.33% of growth rate, relatively
+- Low sales from April to July: especially declining to -79.64% in April, indicating weak mid-year shopping demands and reliance on specific high-performing months to sustain annual revenue.
+- Revenue is strongly depedent on short-term seasonal occasions or promotional events rather than consistent purchasing behaviour.
 
 ### Daily
 <img width="799" height="435" alt="Image" src="https://github.com/user-attachments/assets/466cec33-10aa-4558-b43f-64f80a52b477" />
 
-From daily chart, while both revenue and order volumne increase during weekends, a peak sales appear on Tuesday. The small difference between total sales and total orders presents revenue is mainly volume-driven with the average order value of $3520.98. These features imply that revenue performance is influenced by customer shopping seasons than spending frequencies. Therefore, strategies, such as engagement promotion and marketing campaigns during seasonal periods would be more effective than price-focused approaches.
+- Both revenue and order volumne increase during weekends with a peak sales on Tuesday.
+- The small difference between total sales and total orders: revenue is mainly volume-driven with the average order value of $3520.98. 
+- Revenue performance is influenced by customer shopping seasons than spending frequencies. Therefore, strategies, such as engagement promotion and marketing campaigns during seasonal periods would be more effective than price-focused approaches.
+
+### Operations
+- Repeat purchase rate is high: 64.77% of customers having 10 or more orders
+- 49.3% of total orders exceeded average order-delivery time (5.53 days) and 8.14% of cities experienced delivery issues, exceeding regional average shipping time
+
